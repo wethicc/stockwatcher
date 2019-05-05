@@ -1,8 +1,9 @@
-using System.Data;
+using System;
+using System.Threading.Tasks;
 
 public interface IExternalApiClient
 {
-    IStockPriceData GetPriceDataForStock(IStock stock);
+    Task<IStockPriceData> GetPriceDataForStock(IStock stock);
 
-    IStockPriceData[] GetPriceDataForStockInRange(IStock stock, TimeSpan range, TimeSpan intervals);
+    Task<IStockPriceData[]> GetPriceDataForStockInRange(IStock stock, TimeSpan range, TimeSpan intervals);
 }
